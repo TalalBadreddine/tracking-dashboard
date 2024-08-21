@@ -108,7 +108,7 @@ public class EventService {
         return results.stream()
                 .map(row -> new PageTimeSpent(
                         (String) row[0],
-                        ((Number) row[1]).longValue() / 1000))
+                        row[1] != null ? ((Number) row[1]).longValue() / 1000 : 0L))
                 .collect(Collectors.toList());
     }
 

@@ -28,6 +28,6 @@ public interface EventRepository extends JpaRepository<Event, Long> {
     @Query("SELECT e.pageUrl, COUNT(e) as VIEW_PAGE_COUNT FROM Event e JOIN e.project p WHERE p.name = :projectName AND e.eventType = 'PAGE_VIEW' GROUP BY e.pageUrl ORDER BY VIEW_PAGE_COUNT DESC ")
     List<Object[]> countPageViewsByPageUrl(@Param("projectName") String projectName);
 
-    @Query("SELECT COUNT(e) as ERROR_COUNT FROM Event e JOIN e.project p WHERE p.name = :projectName AND e.error_message IS NOT NULL ")
+    @Query("SELECT COUNT(e) FROM Event e JOIN e.project p WHERE p.name = :projectName AND e.errorMessage IS NOT NULL")
     Long countErrors(@Param("projectName") String projectName);
 }

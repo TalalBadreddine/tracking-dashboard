@@ -3,26 +3,25 @@ import { CalendarIcon } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { Button } from "components/ui/button"
+import { Calendar } from "components/ui/calendar"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
+} from "components/ui/form"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
-import { toast } from "@/components/ui/use-toast"
+} from "components/ui/popover"
+import { toast } from "components/ui/use-toast"
 import { useState } from "react"
-import { formatDate } from "@/helpers/date"
+import { formatDate } from "helpers/date"
+import { cn } from "lib/utils"
 
 const FormSchema = z.object({
   dob: z.date({

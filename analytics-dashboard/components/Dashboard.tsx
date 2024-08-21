@@ -3,12 +3,8 @@ import { DashboardHeader } from "./dashboard/header";
 import CalendarForm from "./dashboard/calendar"
 import { useParams } from "next/navigation";
 import StatsCardGrid from "./dashboard/StatsCardGrid";
-import { useWebSocket } from "@/context/Socket";
-import ClickCountsChart from "./dashboard/ClickCountChart";
-import TimeSpentChart from "./dashboard/TimeSpentInPageChart";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import ViewsPerPagePieChart from "./dashboard/PageViewCountChart";
 import MetricsDashboard from "./dashboard/MetricsDashboard";
+import { useWebSocket } from "context/Socket";
 
 
 export const Dashboard = () => {
@@ -36,7 +32,7 @@ export const Dashboard = () => {
       <br />
       <StatsCardGrid totalClickCount={metrics?.totalClicks || 0} totalTimeSpent={metrics?.timeSpentInProject || 0} totalCountOrErrors={metrics?.errorCount || 0} />
       <br />
-      <MetricsDashboard metrics={metrics} />
+      {metrics && <MetricsDashboard metrics={metrics} />}
     </div>
   );
 };

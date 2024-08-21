@@ -1,4 +1,4 @@
-import { Label } from "@/components/ui/label";
+import { Label } from "components/ui/label";
 
 export function DashboardHeader({ dashboardId }: { dashboardId: string }) {
   return (

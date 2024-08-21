@@ -2,9 +2,12 @@ import RootLayout from './layout';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import { WebSocketProvider } from './context/Socket';
+import { AppProps } from 'next/app';
+import { WebSocketProvider } from 'context/Socket';
+import "./globals.css";
+import "react-day-picker/style.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     AOS.init({

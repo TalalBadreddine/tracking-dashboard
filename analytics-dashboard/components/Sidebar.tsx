@@ -1,12 +1,11 @@
 import { Button } from "./ui/button";
-import { cn } from "../lib/utils";
-import { LayoutGrid, PlayCircle, Radio } from "lucide-react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import axios from "@/lib/axios";
 import { useToast } from "./ui/use-toast";
 import { ToastAction } from "./ui/toast";
 import { useParams } from "next/navigation";
+import axios from "lib/axios";
+import { cn } from "lib/utils";
 
 export interface SidebarProps {
   className?: string;

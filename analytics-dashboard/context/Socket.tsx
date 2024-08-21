@@ -1,8 +1,8 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
+import React, { ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
 type WebSocketContextType = {
   sendMessage: (type: string, data: any) => void;
-  metrics: EventModel;
+  metrics: EventModel | undefined;
   handleProjectNameChange: (e: string) => void
 };
 
@@ -18,7 +18,7 @@ export const useWebSocket = () => {
 };
 
 
-export const WebSocketProvider: React.FC = ({ children }) => {
+export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [metrics, setMetrics] = useState<EventModel>();
   const socketRef = useRef<WebSocket | null>(null);
   const [projectName, setProjectName] = useState<string | null>(null);

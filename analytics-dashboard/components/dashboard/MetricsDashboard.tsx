@@ -4,13 +4,13 @@ import ClickCountsChart from './ClickCountChart';
 import ViewsPerPagePieChart from './PageViewCountChart';
 import TimeSpentChart from './TimeSpentInPageChart';
 
-const Placeholder = ({ message }) => (
+const Placeholder = ({ message }: {message: string}) => (
     <div className="flex justify-center items-center h-full">
         <p className="text-gray-500">{message}</p>
     </div>
 );
 
-const MetricsDashboard = ({ metrics }) => {
+const MetricsDashboard = ({ metrics }: {metrics: EventModel}) => {
     return (
         <Tabs
             defaultValue="chart1"
